@@ -1,0 +1,117 @@
+
+body{
+    overflow: hidden;
+    position: relative;
+
+}
+.orangeColour{
+    max-width: 100%;
+    background-color: orangered;
+    height: 200px;
+    transform-origin: bottom right;
+    transform: rotate(-20deg);
+    border-radius: 20px;
+
+}
+.mainCont{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    background-image: url("../assets/bookswithglasses.jpg") ;
+    width: 55%;
+    height: 400px;
+    z-index: 1;
+    top: 80px;
+    transform: translate(500px);
+    justify-content: space-evenly;
+    opacity: 10;
+
+
+}
+.navbar{
+    background-color: black;
+    width: 55%;
+    height: 70px;
+    position: absolute;
+    z-index: 1;
+    transform: translate(500px);
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.navbar > p{
+  color: white;
+    padding-left: 10px;
+    font-family: Algerian;
+}
+
+.navbar >article{
+    padding-left: 270px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.navbar > article >p >a{
+    color: white;
+    text-decoration: none;
+
+
+}
+.search{
+    font-size: 30px;
+    padding-top: 200px;
+    padding-left: 80px;
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+.footer{
+    background-color: orangered;
+    width: 55%;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    transform: translate(500px);
+    top: 480px;
+}
+.footer input{
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-left: 1px;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+.footer input::placeholder{
+    padding-left: 1px;
+    font-size: 16px;
+}
+
+
+
+.mainCont > div >.pt{
+    font-size: 40px;
+    color: white;
+    font-family: Algerian;
+}
+.mainCont > div >.readNow{
+    background-color:white;
+    color: black;
+    width: 80px;
+    height: 30px;
+    padding-left: 4px;
+    border-radius: 8px;
+    margin-top: 20%;
+    padding-top: 3px;
+}
+
+.mainCont > img{
+    height: 300px;
+    width: 220px;
+    border-radius: 3px;
+}
