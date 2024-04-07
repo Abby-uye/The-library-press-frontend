@@ -17,7 +17,7 @@ body{
     display: flex;
     flex-direction: row;
     position: absolute;
-    background-image: url("../assets/bookswithglasses.jpg") ;
+    background-image: url("../../assets/bookswithglasses.jpg") ;
     width: 55%;
     height: 400px;
     z-index: 1;
@@ -46,7 +46,7 @@ body{
 }
 
 .navbar >article{
-    padding-left: 270px;
+    padding-left: 220px;
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -66,7 +66,7 @@ body{
     z-index: 1;
     color: white;
 }
-.footer{
+.footer {
     background-color: orangered;
     width: 55%;
     height: 100px;
@@ -75,24 +75,24 @@ body{
     transform: translate(500px);
     top: 480px;
 }
-.footer input{
-    width: 300px;
-    height: 40px;
-    margin-top: 10px;
-    border: none;
-    outline: none;
-    padding-left: 10px;
-    font-size: 16px;
-    margin-left: 1px;
-    opacity: 0.9;
+
+.footer div{
+    display: flex;
+    flex-direction: row;
+    gap:100px;
+    padding-left: 70px;
+
+}
+
+.footer div  button {
+    width: 200px;
+    height:40px;
+    font-size: 20px;
     border-radius: 10px;
-}
-.footer input::placeholder{
-    padding-left: 1px;
-    font-size: 16px;
-}
+    border: 1px;
 
 
+}
 
 .mainCont > div >.pt{
     font-size: 40px;

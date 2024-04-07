@@ -1,0 +1,37 @@
+
+.searchBook{
+
+    background-image: url("../../assets/bookshelv.jpg");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    position: fixed;
+
+
+}
+form{
+   padding-left: 100px;
+    background-color: white;
+    width: 30%;
+    height: 40vh;
+    margin-left: 400px;
+    margin-top: 200px;
+
+}
+
+form .fields{
+    padding-top: 40px;
+    font-size: 50px;
+    border: none;
+    border:1px;
+    width: 70px;
+    height: 30px;
+
+
+
+}
+.fields::placeholder{
+    width: 70px;
+    height: 30px;
+    padding-left: 30px;
+}
