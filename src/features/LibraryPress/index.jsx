@@ -95,10 +95,10 @@ const LibraryPress = ()=>{
             <div className={style.footer}>
                 <div>
                 <Link to={"/register"}>
-                    <button style={{marginTop:"23px"}}>Register</button>
+                    <button style={{marginTop:"23px",backgroundColor:"white"}}>Register</button>
                 </Link>
-                    <Link to={"/register"}>
-                        <button style={{marginTop:"23px"}}>Login</button>
+                    <Link to={"/login"}>
+                        <button style={{marginTop:"23px",backgroundColor:"white"}}>Login</button>
                     </Link>
                 </div>
             </div>

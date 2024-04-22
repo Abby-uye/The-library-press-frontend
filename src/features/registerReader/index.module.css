@@ -1,16 +1,14 @@
 
 .register{
-
-    padding-left: 400px;
-   padding-top: 150px;
-    padding-bottom: 100px;
+    height: 100vh;
+   padding-top: 2px;
+    padding-bottom: 20px;
     background-color: orangered;
 
 }
-.register form{
-    background-color: white;
+form{
     width: 500px;
-    height: 400px;
+    height: 60vh;
     padding-left: 20px;
     display: flex;
     flex-direction: column ;
@@ -18,17 +16,18 @@
 
 
 }
-.register form input{
+form input{
     width: 300px;
     height: 40px;
-    margin-top: 30px;
     border-radius: 10px;
     outline: none;
     border: 1px solid black;
-    padding-left: 10px;
+    padding-left: 20px;
+    color: black;
+    margin-bottom: 10px;
 
 
 }
-.register form input::placeholder{
-    color: #2f2e2e;
+form input::placeholder{
+    padding-left: 20px;
 }

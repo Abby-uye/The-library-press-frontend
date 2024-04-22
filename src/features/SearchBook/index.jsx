@@ -1,9 +1,8 @@
 
 import style from "./index.module.css"
-import * as Yup from 'yup';
 import {useState} from "react";
 import {useParams} from "react-router-dom";
-import {Field, Form, Formik} from "formik";
+
 
 const SearchBook = ()=>{
     const [title, setTitle] = useState("")
@@ -14,15 +13,11 @@ const SearchBook = ()=>{
     const [books, setBooks] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
 
-    const validateBook = Yup.object().shape({
-        title: Yup.string().required("You have to enter a valid book title to search for  book")
-    })
-    const handleSubmit = async  (values, {resetForm})=> {
+
+    const handleSearch = async  ()=> {
         try {
-            const payLoad = {
-                title: values.title
-            };
-            const response = await fetch(`http://localhost:8585/api/v1/the-library-app/search-book${id}`,{
+
+            const response = await fetch(`http://localhost:8585/api/v1/the-library-press/search-book${id}`,{
                 method : "POST",
                 headers : {
                     "Content-Type" :"application/json"
@@ -31,55 +26,48 @@ const SearchBook = ()=>{
             })
             if (response.ok){
                 const data = await response.json()
-                setReadingList(data.books)
-                setReadingListError("")
+                setBooks(data.books)
+                setErrorMessage("")
         }
             else {
                 const errorData = response.json()
-                setReadingList([])
+                setBooks([])
                 console.log(errorData.error)
-                setReadingListError(errorData.error)
+                setErrorMessage(errorData.error)
             }
     }
     catch (error){
             console.log("An error occurred while fetching book",error)
-        setErrorMessage("failed to fetch book due to error message")
+        setErrorMessage("failed to fetch book")
     }
 
+
+    }
+    const handleNavigateToFormat = (formatURL) => {
+        window.open(formatURL, "_blank");
+    };
+    const handleBookSearch = (event)=>{
+        setTitle(event.target.value)
     }
     return(
         <div className={style.searchBook}>
-            <Formik
-                initialValues = {{
-                    title:""
-                }}
-                validationSchema ={validateBook}
-                onSubmit={handleSubmit}
-                >
-
-                {({values,errors,touched,handleChange,handleBlur}) =>(
-
-
-                <Form>
-                    <div className={style.fields}>
-
-                        <Field
-                            type="text"
-                            name="title"
-                            placeholder="Enter a book title"
-                            value={values.title}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            style={{ borderColor: errors.title && touched.title ? "red" : "inherit" }}
-                        />
-                        {errors.title && touched.tittle && (
-                            <div className={style.error}>{errors.title}</div>
-                        )}
-                    </div>
-                </Form>
-                )}
-            </Formik>
-
+            <form onSubmit={handleSearch}>
+                <div className={style.inputBtn}>
+                    <input
+                    type={"text"}
+                    name={"search"}
+                    placeholder={"Enter a book title"}
+                    onChange={handleBookSearch}
+                    value={title}
+                    />
+                    {errorMessage && <span>{errorMessage}</span>}
+                </div>
+                <div>
+                    <button type={"submit"}>
+                        Submit
+                    </button>
+                </div>
+            </form>
         </div>
     )
 }
